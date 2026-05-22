@@ -1,17 +1,25 @@
 services:
+  # ── Backend API ─────────────────────────────────────────────────────────────
   - type: web
     name: xai-copilot-api
     env: python
     rootDir: backend
-    buildCommand: pip install -r requirements.txt && python train_model.py
+    buildCommand: >
+      pip install -r requirements.txt &&
+      python train_model.py
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: GROQ_API_KEY
-        sync: false
+        sync: false        # Set manually in Render dashboard
       - key: ENVIRONMENT
         value: production
     autoDeploy: true
+    disk:
+      name: model-data
+      mountPath: /opt/render/project/src/backend/data
+      sizeGB: 1
 
+  # ── Frontend (Static Site) ───────────────────────────────────────────────
   - type: web
     name: xai-copilot-frontend
     env: static

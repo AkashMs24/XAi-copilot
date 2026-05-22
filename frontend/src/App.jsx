@@ -5,7 +5,7 @@ import Predict from './pages/Predict'
 import BiasReport from './pages/BiasReport'
 import Appeal from './pages/Appeal'
 import Copilot from './pages/Copilot'
-import Whatif from './pages/whatif'
+import Whatif from './pages/Whatif'
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
       <Route path="/" element={<Layout />}>
         <Route index         element={<Dashboard />} />
         <Route path="predict" element={<Predict />} />
-        <Route path="whatif"  element={<WhatIf />} />
+        <Route path="whatif" element={<Whatif />} />
         <Route path="bias"    element={<BiasReport />} />
         <Route path="appeal"  element={<Appeal />} />
         <Route path="copilot" element={<Copilot />} />

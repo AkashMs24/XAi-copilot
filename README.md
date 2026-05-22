@@ -1,96 +1,42 @@
-# XAI Copilot — Explainable AI for Credit Risk
+---
+name: frontend-design
+description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.
+license: Complete terms in LICENSE.txt
+---
 
-An enterprise-grade Explainable AI system for loan credit risk assessment with bias detection, decision appeals, and an AI-powered copilot chat.
+This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
 
-## 🚀 Live Demo
+The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
 
-| Service | URL |
-|---|---|
-| **Frontend** | https://xai-copilot.vercel.app |
-| **Backend API** | https://xai-copilot-2.onrender.com |
-| **API Docs (Swagger)** | https://xai-copilot-2.onrender.com/docs |
+## Design Thinking
 
-## ✨ Features
+Before coding, understand the context and commit to a BOLD aesthetic direction:
+- **Purpose**: What problem does this interface solve? Who uses it?
+- **Tone**: Pick an extreme: brutally minimal, maximalist chaos, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian, etc. There are so many flavors to choose from. Use these for inspiration but design one that is true to the aesthetic direction.
+- **Constraints**: Technical requirements (framework, performance, accessibility).
+- **Differentiation**: What makes this UNFORGETTABLE? What's the one thing someone will remember?
 
-- **Predict & Explain** — Submit a loan application and get an AI decision with SHAP-powered plain-English explanation
-- **Bias Detection** — Analyze model fairness across gender, ethnicity, and zip region
-- **Decision Appeal** — Appeal a rejected decision with counterfactual analysis
-- **AI Copilot Chat** — Ask anything about loan decisions in plain English, powered by LLaMA 3.3 70B via Groq
+**CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work - the key is intentionality, not intensity.
 
-## 🛠️ Tech Stack
+Then implement working code (HTML/CSS/JS, React, Vue, etc.) that is:
+- Production-grade and functional
+- Visually striking and memorable
+- Cohesive with a clear aesthetic point-of-view
+- Meticulously refined in every detail
 
-### Frontend
-- React + Vite
-- Tailwind CSS
-- Recharts (SHAP visualizations)
-- Deployed on **Vercel**
+## Frontend Aesthetics Guidelines
 
-### Backend
-- FastAPI (Python 3.11)
-- scikit-learn (Gradient Boosting Classifier)
-- SHAP (Explainability)
-- Groq API — LLaMA 3.3 70B Versatile
-- Deployed on **Render**
+Focus on:
+- **Typography**: Choose fonts that are beautiful, unique, and interesting. Avoid generic fonts like Arial and Inter; opt instead for distinctive choices that elevate the frontend's aesthetics; unexpected, characterful font choices. Pair a distinctive display font with a refined body font.
+- **Color & Theme**: Commit to a cohesive aesthetic. Use CSS variables for consistency. Dominant colors with sharp accents outperform timid, evenly-distributed palettes.
+- **Motion**: Use animations for effects and micro-interactions. Prioritize CSS-only solutions for HTML. Use Motion library for React when available. Focus on high-impact moments: one well-orchestrated page load with staggered reveals (animation-delay) creates more delight than scattered micro-interactions. Use scroll-triggering and hover states that surprise.
+- **Spatial Composition**: Unexpected layouts. Asymmetry. Overlap. Diagonal flow. Grid-breaking elements. Generous negative space OR controlled density.
+- **Backgrounds & Visual Details**: Create atmosphere and depth rather than defaulting to solid colors. Add contextual effects and textures that match the overall aesthetic. Apply creative forms like gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, decorative borders, custom cursors, and grain overlays.
 
-## 📁 Project Structure
+NEVER use generic AI-generated aesthetics like overused font families (Inter, Roboto, Arial, system fonts), cliched color schemes (particularly purple gradients on white backgrounds), predictable layouts and component patterns, and cookie-cutter design that lacks context-specific character.
 
-```
-XAi-copilot/
-├── frontend/          # React + Vite frontend
-│   ├── src/
-│   │   ├── pages/     # Dashboard, Predict, Bias, Appeal, Copilot
-│   │   ├── components/
-│   │   └── services/  # API calls
-│   └── vercel.json    # SPA routing config
-├── backend/           # FastAPI backend
-│   ├── app/
-│   │   ├── api/       # predict, explain, bias, appeal, chat
-│   │   ├── core/      # model loader
-│   │   ├── models/    # schemas
-│   │   └── services/  # groq_service
-│   ├── train_model.py # Generates ML artifacts
-│   └── requirements.txt
-└── render.yaml        # Render deployment config
-```
+Interpret creatively and make unexpected choices that feel genuinely designed for the context. No design should be the same. Vary between light and dark themes, different fonts, different aesthetics. NEVER converge on common choices (Space Grotesk, for example) across generations.
 
-## 🏃 Run Locally
+**IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
 
-### Backend
-```bash
-cd backend
-pip install -r requirements.txt
-python train_model.py       # Train model & generate artifacts
-uvicorn app.main:app --reload
-```
-
-### Frontend
-```bash
-cd frontend
-npm install
-echo "VITE_API_URL=http://localhost:8000/api/v1" > .env
-npm run dev
-```
-
-## 🌐 Deployment
-
-### Backend (Render)
-- **Runtime:** Python 3.11.9
-- **Build Command:** `pip install -r requirements.txt && python train_model.py`
-- **Start Command:** `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-- **Env Vars:** `GROQ_API_KEY`, `PYTHON_VERSION=3.11.9`
-
-### Frontend (Vercel)
-- **Root Directory:** `frontend`
-- **Framework:** Vite
-- **Env Vars:** `VITE_API_URL=https://xai-copilot-2.onrender.com/api/v1`
-
-## 📊 ML Model
-
-- **Algorithm:** Gradient Boosting Classifier (200 estimators)
-- **Features:** Age, Annual Income, Loan Amount, Credit Score, Employment Years, Debt-to-Income Ratio, Credit Lines, Delinquencies
-- **Explainability:** SHAP TreeExplainer
-- **Training Data:** 3,000 synthetic loan applications with realistic bias patterns
-
-## 📝 License
-
-MIT
+Remember: Claude is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Zap, Shield, FileText, MessageSquare, ArrowRight, TrendingUp, Users, AlertTriangle } from 'lucide-react'
+import { Zap, Shield, FileText, MessageSquare, FlaskConical, ArrowRight, TrendingUp, Users, AlertTriangle } from 'lucide-react'
 
 const features = [
   {
@@ -11,9 +11,17 @@ const features = [
     tag: 'Core Feature'
   },
   {
+    to: '/whatif',
+    icon: FlaskConical,
+    color: 'emerald',
+    title: 'What-If Simulator',
+    description: 'Change individual factors and instantly see how your risk score shifts. Find the minimal changes needed to flip a rejection.',
+    tag: 'New'
+  },
+  {
     to: '/bias',
     icon: Shield,
-    color: 'emerald',
+    color: 'amber',
     title: 'Bias Detection',
     description: 'Analyze the AI model for demographic bias across gender, ethnicity, and geography using disparate impact analysis.',
     tag: 'Fairness'
@@ -21,10 +29,10 @@ const features = [
   {
     to: '/appeal',
     icon: FileText,
-    color: 'amber',
+    color: 'crimson',
     title: 'Decision Appeal',
     description: 'Rejected? Submit an appeal with your reasoning and get AI-powered counterfactual suggestions to flip the decision.',
-    tag: 'New'
+    tag: 'Appeal'
   },
   {
     to: '/copilot',
@@ -37,17 +45,17 @@ const features = [
 ]
 
 const stats = [
-  { label: 'Model Accuracy', value: '91.2%', icon: TrendingUp, color: 'emerald' },
-  { label: 'Applications Analyzed', value: '3,000', icon: Users, color: 'accent' },
-  { label: 'Bias Flags', value: '3 Groups', icon: AlertTriangle, color: 'amber' },
+  { label: 'Model Accuracy',        value: '93.9%',   icon: TrendingUp,    color: 'emerald' },
+  { label: 'Applications Analyzed', value: '150,000', icon: Users,         color: 'accent'  },
+  { label: 'Bias Flags',            value: '3 Groups', icon: AlertTriangle, color: 'amber'   },
 ]
 
 const colorMap = {
-  accent: 'text-accent bg-accent/10 border-accent/20',
-  emerald: 'text-emerald bg-emerald/10 border-emerald/20',
-  amber: 'text-amber bg-amber/10 border-amber/20',
-  'accent-soft': 'text-accent-soft bg-accent/10 border-accent/20',
-  crimson: 'text-crimson bg-crimson/10 border-crimson/20',
+  accent:       'text-accent bg-accent/10 border-accent/20',
+  emerald:      'text-emerald bg-emerald/10 border-emerald/20',
+  amber:        'text-amber bg-amber/10 border-amber/20',
+  'accent-soft':'text-accent-soft bg-accent/10 border-accent/20',
+  crimson:      'text-crimson bg-crimson/10 border-crimson/20',
 }
 
 export default function Dashboard() {
@@ -111,7 +119,7 @@ export default function Dashboard() {
       {/* Tech stack */}
       <div className="mt-8 p-4 bg-panel border border-border rounded-2xl flex items-center gap-6 flex-wrap">
         <span className="text-xs text-muted font-mono">TECH STACK</span>
-        {['FastAPI', 'Scikit-learn', 'SHAP', 'Groq · LLaMA 3', 'React', 'Recharts'].map(t => (
+        {['FastAPI', 'Scikit-learn', 'SHAP', 'Groq · LLaMA 3.3', 'React', 'Recharts'].map(t => (
           <span key={t} className="text-xs font-mono text-accent-soft bg-accent/5 px-2 py-1 rounded-md border border-accent/10">{t}</span>
         ))}
       </div>

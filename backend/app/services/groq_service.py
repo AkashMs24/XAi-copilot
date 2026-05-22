@@ -4,8 +4,6 @@ from typing import List, Dict, Any
 
 client = AsyncGroq(api_key=os.getenv("GROQ_API_KEY"))
 MODEL = "llama-3.3-70b-versatile"
-SYSTEM_PROMPT = """You are an Explainable AI Copilot...
-
 SYSTEM_PROMPT = """You are an Explainable AI Copilot for a loan credit risk assessment system.
 Your role is to help business users — especially non-technical ones — understand AI decisions in plain English.
 
@@ -14,9 +12,9 @@ Guidelines:
 - Be empathetic when explaining rejections
 - Always reference specific data points from the application
 - Never make up data. Only reference what is provided.
-- Keep responses concise (2–4 paragraphs max)
+- Keep responses concise (2-4 paragraphs max)
 - When discussing bias, be factual and constructive
-- You are NOT a financial advisor — clarify this when needed
+- You are NOT a financial advisor - clarify this when needed
 """
 
 
@@ -45,7 +43,7 @@ Top factors driving this decision (SHAP analysis):
 {factors_text}
 
 Please explain this decision in plain English to the applicant. Be empathetic, specific, and constructive.
-If rejected, briefly mention 1–2 actionable things they could improve."""
+If rejected, briefly mention 1-2 actionable things they could improve."""
 
     response = await client.chat.completions.create(
         model=MODEL,

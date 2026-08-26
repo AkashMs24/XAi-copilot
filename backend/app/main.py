@@ -18,10 +18,16 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# Note: allow_origins=["*"] cannot be combined with allow_credentials=True —
+# that combination is invalid per the CORS spec, and browsers will reject
+# credentialed requests against a wildcard origin. Since the frontend
+# (frontend/src/services/api.js) never sends cookies/credentials, we disable
+# allow_credentials here. If you later add cookie-based auth, replace "*"
+# with an explicit list of allowed origins instead.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )

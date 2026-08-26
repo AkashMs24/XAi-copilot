@@ -3,7 +3,13 @@ from groq import AsyncGroq
 from typing import List, Dict, Any, Optional
 
 client = AsyncGroq(api_key=os.getenv("GROQ_API_KEY"))
-MODEL  = "llama-3.3-70b-versatile"
+
+# Model — verified current as of Aug 2026.
+# llama-3.3-70b-versatile was deprecated by Groq (announced June 17, 2026).
+# openai/gpt-oss-120b is Groq's recommended replacement for that workload.
+# Override via GROQ_MODEL env var if this one is retired too — check
+# https://console.groq.com/docs/models for a current model ID.
+MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 
 SYSTEM_PROMPT = """You are an Explainable AI Copilot for a loan credit risk assessment system.
 Your role is to help business users — especially non-technical ones — understand AI decisions in plain English.
